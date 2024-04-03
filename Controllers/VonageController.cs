@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
+﻿using Microsoft.AspNetCore.Mvc;
+using OpenTokSDK;
 using Vonage;
+using Vonage.Common.Monads;
+using Vonage.Cryptography;
 using Vonage.Request;
+using Vonage.Video.Archives.CreateArchive;
 using Vonage.Video.Authentication;
 using Vonage.Video.Sessions.CreateSession;
-using Vonage.Video.Sessions;
-using System.Reflection.Emit;
-using Vonage.Video;
+using Archive = Vonage.Video.Archives.Archive;
+using MediaMode = Vonage.Video.Sessions.MediaMode;
 
 namespace VonageServer.Controllers
 {
@@ -17,9 +16,10 @@ namespace VonageServer.Controllers
     [ApiController]
     public class VonageController : ControllerBase
     {
-        private static Dictionary<string, string> _sessions;
-        private string _apiKey = "098683eb-10d7-42fa-ac09-0a241a31c28a";
 
+        private static Dictionary<string, string>? _sessions;
+        private const int ApiKey = 47881851;
+        private const string Secret = "1c1d2ad8c4749bc9a22a196f6f3e2d1c724e4a32";
         public VonageController()
         {
             _sessions ??= new Dictionary<string, string>();
@@ -30,33 +30,17 @@ namespace VonageServer.Controllers
         {
             try
             {
-                var generator = new VideoTokenGenerator();
-                var credentials = Credentials.FromAppIdAndPrivateKeyPath("098683eb-10d7-42fa-ac09-0a241a31c28a", "private.key");
-                var client = new VonageClient(credentials);
-                var videoClient = client.VideoClient;
+                var opentok = new OpenTok(47881851, Secret);
 
-                var sessionId = "";
-                if (_sessions.ContainsKey(room))
-                {
-                    sessionId = _sessions[room];
-                }
-                else
-                {
-                    // Create a default session request
-                    var createSessionRequest = CreateSessionRequest.Default;
-                    var newSession = await videoClient.SessionClient.CreateSessionAsync(createSessionRequest);
-                    sessionId = newSession.GetSuccessUnsafe().SessionId;
-                }
+                var sessionId = _sessions!.TryGetValue(room, out var storedSessionId) ? storedSessionId :
+                    (await opentok.CreateSessionAsync()).Id;
 
-                var claims = TokenAdditionalClaims.Parse(sessionId);
-
-                var videoToken = generator.GenerateToken(credentials, claims).GetSuccessUnsafe().Token;
-
+                var token = opentok.GenerateToken(sessionId);
                 var data = new OpenTokData()
                 {
                     SessionId = sessionId,
-                    Token = videoToken,
-                    ApiKey = _apiKey
+                    Token = token,
+                    ApiKey = ApiKey
                 };
 
                 _sessions[room] = sessionId;
@@ -69,12 +53,30 @@ namespace VonageServer.Controllers
             }
         }
 
+        //[HttpGet("archive/{sessionId}")]
+        //public async Task<IActionResult> StartArchiveAsync(string sessionId)
+        //{
+        //    var credentials = Credentials.FromAppIdAndPrivateKeyPath("098683eb-10d7-42fa-ac09-0a241a31c28a", "private.key");
+        //    var client = new VonageClient(credentials);
+        //    var videoClient = client.VideoClient;
+
+        //    Result<CreateArchiveRequest> request = CreateArchiveRequest.Build()
+        //        .WithApplicationId(Guid.Parse(_apiKey))
+        //        .WithSessionId(sessionId)
+        //        .Create();
+
+
+        //    Result<Archive> response = await videoClient.ArchiveClient.CreateArchiveAsync(request);
+        //    var archive = response.GetSuccessUnsafe();
+        //    return Ok(archive);
+        //}
+
     }
 
     public class OpenTokData
     {
         public string SessionId { get; set; }
         public string Token { get; set; }
-        public string ApiKey { get; set; }
+        public int ApiKey { get; set; }
     }
 }

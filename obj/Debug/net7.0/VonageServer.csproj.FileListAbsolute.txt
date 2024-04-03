@@ -59,3 +59,6 @@ D:\POC\VonageServer\VonageServer\bin\Debug\net7.0\Vonage.dll
 D:\POC\VonageServer\VonageServer\bin\Debug\net7.0\Yoh.Text.Json.NamingPolicies.dll
 D:\POC\VonageServer\VonageServer\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 D:\POC\VonageServer\VonageServer\bin\Debug\net7.0\private.key
+D:\POC\VonageServer\VonageServer\obj\Debug\net7.0\VonageServer.sourcelink.json
+D:\POC\VonageServer\VonageServer\bin\Debug\net7.0\JWT.dll
+D:\POC\VonageServer\VonageServer\bin\Debug\net7.0\OpenTok.dll

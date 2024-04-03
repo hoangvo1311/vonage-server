@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kxsckxNhafP+WJ+frPBokBr5bZ44JK4wJTHg1/yJ8Qko+MlUcmrLVfZ+66cy8/1S+8vf/ItNN1WKYaRyPo1/Nw==",
+  "dgSpecHash": "rBuAsn5tFZzJ19jP6ERnsSIrz2AU3WQuLDzOQcBoALS8j5g8ukSMDDPJjyRtdWx3fDcbCdQ6kI7nx2yNL8aldw==",
   "success": true,
   "projectFilePath": "D:\\POC\\VonageServer\\VonageServer\\VonageServer.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\hoang\\.nuget\\packages\\epoch.net\\4.1.0\\epoch.net.4.1.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\handy.dotnetcore-compatibility.colortranslations\\0.2.1\\handy.dotnetcore-compatibility.colortranslations.0.2.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\jose-jwt\\4.1.0\\jose-jwt.4.1.0.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\jwt\\10.1.0\\jwt.10.1.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.16\\microsoft.aspnetcore.openapi.7.0.16.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
@@ -28,6 +29,7 @@
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\opentok\\3.13.0\\opentok.3.13.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
