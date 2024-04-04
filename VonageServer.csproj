@@ -10,13 +10,6 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.16" />
     <PackageReference Include="OpenTok" Version="3.13.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    <PackageReference Include="Vonage" Version="7.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="private.key">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
