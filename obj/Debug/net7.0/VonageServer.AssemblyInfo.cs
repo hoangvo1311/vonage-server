@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VonageServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b22dcfd5895b4249dba131ba30d0e262b337789")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8eec55d7e74ed6bc54a41d1934441d92ccbb3a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("VonageServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VonageServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
